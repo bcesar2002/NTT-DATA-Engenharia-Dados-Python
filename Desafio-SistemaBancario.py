@@ -1,4 +1,5 @@
-selecao = """
+""" Sistema Bancário - Implementa depósitos, saques e estratos """
+SELECAO = """
 
 (d/D) Depositar
 (s/S) Sacar
@@ -15,9 +16,9 @@ saida = ""
 
 while True:
 
-    escolha = input(selecao)
+    escolha = input(SELECAO)
 
-    if escolha == "D" or escolha == "d":
+    if escolha in ('D', 'd'):
         valor = float(input("Informe o valor do depósito: "))
 
         if valor > 0:
@@ -27,7 +28,7 @@ while True:
         else:
             print("Operação falhou! O valor informado é inválido.")
 
-    elif escolha == "S" or escolha == "s":
+    elif escolha in ('S', 's'):
         valor = float(input("Informe o valor do saque: "))
 
         saldo_maior = valor > saldo
@@ -53,13 +54,13 @@ while True:
         else:
             print("Operação falhou! O valor informado é inválido.")
 
-    elif escolha == "E" or escolha == "e":
+    elif escolha in ('E', 'e'):
         print("\n================ EXTRATO ================")
         print("Não foram realizadas movimentações." if not saida else saida)
         print(f"\nSaldo: R$ {saldo:.2f}")
         print("==========================================")
 
-    elif escolha == "X" or escolha == "x":
+    elif escolha in ('X', 'x'):
         break
 
     else:
